@@ -4,10 +4,29 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <script defer type="module" src="/src/main.ts"></script>
+    <link rel="stylesheet" href="./src/style.css">
+
+    <title>Santas quest</title>
   </head>
   <body>
+<div class="backgroundDiv">
+  <img class="background" src="/src/assets/christmas-room-interior-christmas-tree-gift-and-decorations-living-room-with-fireplace-and-armchair-decorated-for-christmas-vector.jpg" alt="">
+  <div class="container">
+  <div id="text"></div>
+  <div id="answer_buttons" class="btn-grid">
+    <button class="btn" id="leftbutton"></button>
+    <button class="btn" id="rightbutton"></button>
+    <!-- <button class="btn">Option 3</button>
+    <button class="btn">Option 4</button> -->
+  </div>
+</div>
+<div class="ladder">
+  <img class="stair" src="/src/assets/580b585b2edbce24c47b2bbe.png.crdownload" alt=""> 
+  <img class="candy" src="/src/assets/Chocolate-Candy-Bar-PNG-Photos.png" alt="">
+  <img class="santa" src="/src/assets/santa-left.png" alt="">
+</div>
+</div>
     <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
