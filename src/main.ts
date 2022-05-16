@@ -7,6 +7,10 @@ let text = document.querySelector<HTMLDivElement>('#text')!
 let leftbutton = document.getElementById("leftbutton") as HTMLElement
 let rightbutton = document.getElementById("rightbutton") as HTMLElement
 
+let img = document.querySelector<HTMLImageElement>(".santaHidden")!
+let img2 = document.querySelector<HTMLImageElement>(".mrssantaHidden")!
+let img3 = document.querySelector<HTMLImageElement>(".shotgun")!
+
 
 
 function onLoad(): void {
@@ -49,34 +53,42 @@ function gameprogress(this: HTMLElement, event: MouseEvent): void {
     });
     if ( found ) {
       currentGamestep = found
-      console.log(found)
+      //console.log(found)
       renderStep()
     }
     
   }  
   
   function renderStep() {
+    let picture = img
+    let imgMrsSanta = img2
+    let shotgun = img3
+
     text!.innerText = currentGamestep.question
     leftbutton!.innerText = currentGamestep.choises.leftbutton!.answer
     rightbutton!.innerText = currentGamestep.choises.rightbutton!.answer
-  }
-   
-   //gameprogress(event)
-   
     
-    
-    /* for (let i = 0; i < currentGamestep.length; i++)  {
-      const gameState = currentGamestep; */
-      
-      /*    if (choises == this.id  ) {
-      text!.innerText = currentGamestep.question
-      leftbutton!.innerText = currentGamestep.choises.leftbutton!.answer
-      rightbutton!.innerText = currentGamestep.choises.rightbutton!.answer
-  } 
- // text?.innerText = gameState.question
+    if ( picture && currentGamestep.img ) {
+     // picture.src = currentGamestep.img?.url
+    // picture.classList.remove('hiddenSanta') 
+     picture.classList.add(currentGamestep.img.class)
+     picture.style.visibility = "visible"
+      picture.append(currentGamestep.img.url)
+      //console.log('hej')
+      if (currentGamestep.id == 6 || currentGamestep.id == 7) {
+        imgMrsSanta.classList.add(currentGamestep.img2!.class)
+        imgMrsSanta!.style.visibility = "visible"
+        imgMrsSanta!.append(currentGamestep.img2!.url)
+        
+        shotgun.classList.add(currentGamestep.img3!.class)
+        shotgun!.style.visibility = "visible"
+        shotgun!.append(currentGamestep.img3!.url)
+      }
+    }
  
- console.log(gameState)
- console.log('hej')*/
+    //img.src = currentGamestep.img?.url
+   
+  }
 
 
 leftbutton!.addEventListener("click", gameprogress)  
@@ -85,133 +97,3 @@ rightbutton!.addEventListener("click", gameprogress)
 
 
 onLoad()
-
-
-
-
-
-
-
-/* console.log('hej')
-const textBox = document.querySelector<HTMLDivElement>('text');
-  
- */
-
-/* const optionbuttons = document.getElementById('answer_buttons')
-if( optionbuttons ) {
-  window.addEventListener("click", () => {showAnswer()
-  }
-  )
-  } */
-
-  
-  //console.log(questions)
-  
-  /* 
-  let progress = {}
-  
-  function startTheGame() {
-  progress = {}
-}
-
-
-function showText(questionIndex: number) {
-  const question: number = questions.find(question => question.id == questionIndex)
-  textBox.innerText = questions.text
-}
-
-function optionSelect(option: number) {
-  
-}
-*/
-
-
-
-
-/* function showAnswer() {
-  let textboxAnswer: string = options.answerText
-  console.log(textboxAnswer)
-}
- */
-
-
-
-
-//startTheGame()
-
-
-
-
-/* 
-let myString: string = "Hello";
-let myBoolean: boolean | string | undefined = true;
-
-interface User {
-  name: string, 
-  age: number
-}
-
-interface Fordon {
-brand: string
-}
-
-interface Bil extends Fordon {
-doors: string[]
-}
-
-interface Motorcykel {
-footpegs: string[]
-}
-
-let car : Bil
-
-let myObject: { name: string, age: number } = {
-  name: "Fredrik",
-  age: 35
-}
-
-//myObject.name = 54;
-myObject.age = 54;
-
-let users: {name: string, age: number }[] = [{
-    name: "Fredrik",
-  age: 35
-  },
-  {
-    name: "Amina",
-    age: 21
-},
-{
-    name: "Victor",
-    age: 78
-}
-]
-
-  users.forEach((user) =>{
-
-  }) 
-
-const addUser: (name: string, age: number) => void = (name, age) => {
-  //users.push({name: name, age})
-  const newUsersList = [...users, {name, age}]
-  users = newUsersList
-}
-
-console.log(users)
-addUser("Kalle", 18)
-console.log(users)
-
-const calculateNumbers: (numOne: number, numTwo: number) => boolean = (x, y) => {
-  return (x + y as unknown as boolean)
-}
-
-console.log (calculateNumbers(10, 20))
-
-const logUsers: (users: {name: string, age: number}) => void = (users) => {
-  users.forEach((user) => {
-    let {name, age} = users
-    console.log(name, age)
-  });
-}
-
- */

@@ -1,15 +1,28 @@
 export interface Progress {
     id: number,
     question: string
+    answer?: answerText
+    img?: ImageData
+    img2?: ImageData
+    img3?: ImageData
     choises: {
-        leftbutton: buttonClick | null 
-        rightbutton: buttonClick | null 
+        leftbutton: ButtonClick | null 
+        rightbutton: ButtonClick | null 
     }
 }
 
-interface buttonClick {
+export interface answerText {
+    answer: string
+}
+
+export interface ButtonClick {
     answer: string
     nextQuestion: number
+}
+
+export interface ImageData {
+    url: string, 
+    class: string,
 }
 
 

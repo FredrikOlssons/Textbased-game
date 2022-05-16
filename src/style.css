@@ -1,5 +1,4 @@
 #text {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -11,6 +10,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -70,20 +70,20 @@ body {
 .btn {
   border-radius: 10px;
   background-color: ivory;
-  height: 40px;
+  height: 50px;
 }
 
 #leftbutton:hover {
-  min-height: 50px;
+  min-height: 60px;
   background-color: rgb(185, 137, 231);
-color: darkgrey;
-border: 2px solid black;
+  color: black;
+  border: 2px solid black;
 }
 
 #rightbutton:hover {
-  min-height: 50px;
+  min-height: 60px;
   background-color: rgb(185, 137, 231);
-color: darkgrey;
+color: black;
 border: 2px solid black;
 }
 
@@ -109,16 +109,89 @@ border: 2px solid black;
 
 .candy {
   max-width: 72px;
-  position: absolute;
-  left: -5%;
-  top: 3%;
+    position: absolute;
+    left: -5%;
+    top: 5%;
+    transform: rotate(45deg);
   
 }
 
+.shotgun {
+  position: absolute;
+    left: -40%;
+    transform: scale(0.3) rotate(30deg);
+    top: 39%;
+    visibility: hidden
+}
+
+.santaHidden { 
+  visibility: hidden 
+}
+
+.mrssantaHidden {
+visibility: hidden;
+position: absolute;
+left: -22%;
+transform: scale(0.5);
+top: 20%;
+}
+
+.santa1 {
+  height: 100%;
+  position: absolute;
+  left: 55%;
+}
+
 .santa {
+  position: absolute;
   height: 190px;
   max-height: 50%;
-  top: 57%;
-    left: 37%;
-    transform: rotate(-20deg) scale(1.5) rotateY(180deg);
+  top: 44%;
+  left: 28%;
+  transform: rotate(-20deg) scale(1.5) rotateY(180deg);
+}
+
+.santa2 {
+  position: absolute;
+  height: 190px;
+  max-height: 50%;
+  top: 35%;
+  left: 25%;
+  transform: rotate(-20deg) scale(1.5) rotateY(180deg);
+}
+
+.santa3 {
+  position: absolute;
+  height: 190px;
+  max-height: 50%;
+  top: 24%;
+  left: 22%;
+  transform: rotate(-20deg) scale(1.5) rotateY(180deg);
+}
+
+.santa4 {
+  position: absolute;
+  height: 190px;
+  max-height: 50%;
+  top: 15%;
+  left: 20%;
+  transform: rotate(-20deg) scale(1.5) rotateY(180deg);
+}
+.santa5 {
+  position: absolute;
+  height: 190px;
+  max-height: 50%;
+  top: -2%;
+  left: 15%;
+  transform: rotate(-20deg) scale(1.5) rotateY(180deg);
+}
+
+.santa6 {
+  position: absolute;
+    height: 190px;
+    max-height: 50%;
+    top: 74%;
+    left: 61%;
+    /* transform: rotate(-20deg) scale(1.5) rotateY(180deg); */
+    transform: rotate(90deg) scale(1.5);
 }
