@@ -1,18 +1,21 @@
 export interface Progress {
     id: number,
     question: string
-    answer?: answerText
     img?: ImageData
     img2?: ImageData
     img3?: ImageData
+    soundeffect?: Soundeffect
+    
+    answer?: answerText
     choises: {
-        leftbutton: ButtonClick | null 
-        rightbutton: ButtonClick | null 
+        leftbutton?: ButtonClick | null 
+        rightbutton?: ButtonClick | null
+        confirmbutton?: ButtonClick | null 
     }
 }
 
 export interface answerText {
-    answer: string
+    answer: number | string
 }
 
 export interface ButtonClick {
@@ -23,6 +26,10 @@ export interface ButtonClick {
 export interface ImageData {
     url: string, 
     class: string,
+}
+
+export interface Soundeffect {
+  url: string
 }
 
 

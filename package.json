@@ -10,5 +10,8 @@
   "devDependencies": {
     "typescript": "^4.5.4",
     "vite": "^2.9.7"
+  },
+  "dependencies": {
+    "@types/play-sound": "^1.1.0"
   }
 }
