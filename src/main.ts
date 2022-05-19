@@ -7,56 +7,46 @@ let text = document.querySelector<HTMLDivElement>('#text')!
 let leftbutton = document.getElementById("leftbutton") as HTMLElement
 let rightbutton = document.getElementById("rightbutton") as HTMLElement
 
+let hint = document.getElementById("hintText") as HTMLElement
 let img = document.querySelector<HTMLImageElement>(".santaHidden")!
 let img2 = document.querySelector<HTMLImageElement>(".mrssantaHidden")!
 let img3 = document.querySelector<HTMLImageElement>(".shotgun")!
 
+let inputField = document.querySelector<HTMLDivElement>(".input")      
+let backgroundSound = new Audio("./src/assets/jingle-bells-james-lord-pierpont-christmas-piano-music-12341.mp3")
+
 /* let soundIcon = document.querySelector<HTMLImageElement>(".soundOff")!
 
 function muteSound() {
-
+  
 } */
 
 function playSound() {
-  let backgroundSound = new Audio("./src/assets/jingle-bells-james-lord-pierpont-christmas-piano-music-12341.mp3")
- // let startMusic = backgroundSound 
   backgroundSound.play();
-  backgroundSound.volume = 0.2;
+  backgroundSound.volume = 0.9;
+}
+
+function stopSound() {
+  backgroundSound.pause();
 }
 
 
 function onLoad(): void {
-  //firstStep()
-  
   renderStep()
 }
 
 let currentGamestep = progress[0]
 
 
-
-/* function firstStep() : void {
-  text!.innerText = state[0].question
-  leftbutton!.innerText = state[0].choises.leftbutton!.answer
-  rightbutton!.innerText = state[0].choises.rightbutton!.answer
-} */
-/* function checkId(step) {
-  return step;
-}
-
-function myFunction() {
-  document.getElementById("text")!.innerText = progress.find(id);
-}
-*/
 function gameprogress(this: HTMLElement, event: MouseEvent): void {
   let nextStep: number = 0  
   
   if (this.id == "leftbutton") {
     nextStep = currentGamestep.choises.leftbutton!.nextQuestion
-    //console.log(currentGamestep.choises.leftbutton!.nextQuestion)
+    
   } else if(this.id == "rightbutton") {
     nextStep = currentGamestep.choises.rightbutton!.nextQuestion
-    //console.log(currentGamestep.choises.rightbutton!.nextQuestion)
+    
   } else(
     console.log("Fail")
     )
@@ -66,7 +56,6 @@ function gameprogress(this: HTMLElement, event: MouseEvent): void {
     });
     if ( found ) {
       currentGamestep = found
-      //console.log(found)
       renderStep()
     }
     
@@ -77,41 +66,80 @@ function gameprogress(this: HTMLElement, event: MouseEvent): void {
     let imgMrsSanta = img2
     let shotgun = img3
     let soundeffect = new Audio("./src/assets/Beefy-12-Gauge-Pump-Action-Shotgun-Close-Gunshot-A-www.fesliyanstudios.com-www.fesliyanstudios.com.mp3")
-  
-
-    text!.innerText = currentGamestep.question
-    leftbutton!.innerText = currentGamestep.choises.leftbutton!.answer
-    rightbutton!.innerText = currentGamestep.choises.rightbutton!.answer
     
-    if ( picture && currentGamestep.img ) {
-     // picture.src = currentGamestep.img?.url
-    // picture.classList.remove('hiddenSanta') 
-     picture.classList.add(currentGamestep.img.class)
-     picture.style.visibility = "visible"
-      picture.append(currentGamestep.img.url)
-     // playSound()
+    
+    if(currentGamestep.choises.leftbutton) {
+      leftbutton!.innerText = currentGamestep.choises.leftbutton!.answer
       
-     // console.log(soundeffect)
-      if (currentGamestep.id == 6 || currentGamestep.id == 7) {
-        imgMrsSanta.classList.add(currentGamestep.img2!.class)
-        imgMrsSanta!.style.visibility = "visible"
-        //imgMrsSanta!.append(currentGamestep.img2!.url)
-      }
+    } else {
+      
+      leftbutton.classList.add('input')
+    }
+    
+    if(currentGamestep.choises.rightbutton) {
+      rightbutton!.innerText = currentGamestep.choises.rightbutton!.answer
+    }
+    
+    if(currentGamestep.hint) {
+      hint.innerText = currentGamestep.hint
+    }
+    if(!currentGamestep.hint) {
+      hint.innerText = ''
+    }
+    
+    if (currentGamestep.question) {
+      text!.innerText = currentGamestep.question      
+    }
+    
+    if(currentGamestep.answerInput){      
+      
+      if (inputField) {
+        inputField.innerText = currentGamestep.answerInput.answer
+        inputField.classList.add('showInput')       
+      } 
+            
+    } else if (!currentGamestep.answerInput && inputField) {
+      inputField.classList.remove('showInput')
+      leftbutton.classList.remove('input')
+    }
+    
+    if(currentGamestep.id == 0) {
+      stopSound()
     }
 
-    if (currentGamestep.id == 7 && currentGamestep.soundeffect!.url) {
+    if ( picture && currentGamestep.img ) {
+      picture.classList.add(currentGamestep.img.class)
+      picture.append(currentGamestep.img.url)
+      if (currentGamestep.id == 12) {
+        playSound()
+      }
+    }
+    
+    if(currentGamestep.img2) {
+      imgMrsSanta.classList.add(currentGamestep.img2!.class)      
+    }    
+    
+    if (currentGamestep.img3) {
       shotgun.classList.add(currentGamestep.img3!.class)
       shotgun!.style.visibility = "visible"
       shotgun!.append(currentGamestep.img3!.url)
+    }
+    
+    if (currentGamestep.soundeffect) {
       soundeffect.play();
       soundeffect.volume = 1.0;
+    }
+
+    if (!currentGamestep.choises.leftbutton && currentGamestep.answerInput) {
+      
+      //confirmBtn.classList.add('btn')
+      //confirmBtn.innerText = currentGamestep.choises.confirmbutton.answer
+      //buttonGrid.append(confirmBtn)
     }
     
     if (currentGamestep.id == 11) {
       location.reload()
     }
- 
-    //img.src = currentGamestep.img?.url
    
   }
 

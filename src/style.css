@@ -5,7 +5,17 @@
   color: #2c3e50;
   margin-top: 30px;
   padding: 10px;
-  min-height: 100px;
+  min-height: 70px;
+}
+
+#hintText {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  
+  padding: 10px;
+  font-size: 11px;
 }
 
 * {
@@ -70,23 +80,32 @@ body {
 .btn {
   border-radius: 10px;
   background-color: ivory;
-  height: 50px;
+  height: 60px;
 }
 
 #leftbutton:hover {
-  min-height: 60px;
+  min-height: 70px;
   background-color: rgb(185, 137, 231);
   color: black;
   border: 2px solid black;
 }
 
 #rightbutton:hover {
-  min-height: 60px;
+  min-height: 70px;
   background-color: rgb(185, 137, 231);
-color: black;
-border: 2px solid black;
+  color: black;
+  border: 2px solid black;
 }
 
+.input {
+  display: none;
+}
+
+.showInput {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+}
 
 
 .ladder {
@@ -136,13 +155,23 @@ transform: scale(0.5);
 top: 20%;
 }
 
+.mrssanta {
+  visibility: visible;
+  position: absolute;
+  left: -22%;
+  transform: scale(0.5);
+  top: 20%;
+  }
+
 .santa1 {
+  visibility: visible;
   height: 100%;
   position: absolute;
   left: 55%;
 }
 
 .santa {
+  visibility: visible;
   position: absolute;
   height: 190px;
   max-height: 50%;
@@ -152,6 +181,7 @@ top: 20%;
 }
 
 .santa2 {
+  visibility: visible;
   position: absolute;
   height: 190px;
   max-height: 50%;
@@ -161,6 +191,7 @@ top: 20%;
 }
 
 .santa3 {
+  visibility: visible;
   position: absolute;
   height: 190px;
   max-height: 50%;
@@ -170,6 +201,7 @@ top: 20%;
 }
 
 .santa4 {
+  visibility: visible;
   position: absolute;
   height: 190px;
   max-height: 50%;
@@ -178,6 +210,7 @@ top: 20%;
   transform: rotate(-20deg) scale(1.5) rotateY(180deg);
 }
 .santa5 {
+  visibility: visible;
   position: absolute;
   height: 190px;
   max-height: 50%;
@@ -187,6 +220,7 @@ top: 20%;
 }
 
 .santa6 {
+  visibility: visible;
   position: absolute;
     height: 190px;
     max-height: 50%;

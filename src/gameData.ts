@@ -4,12 +4,22 @@ export let progress: Progress[] = [
     {
         id: 0,
         img: {url: "./src/assets/santa-left.png", class: "hiddenSanta"},
-        question: 'Hello! If this is the first time playing, welcome! If you failed and had to restart.... DO BETTER THIS TIME!',
+        question: 'Hello! And welcome to the game!',
+        hint: 'Hint: If you just restarted the game because you are an idiot..... DO BETTER THIS TIME!',
         choises: {
-            leftbutton: { answer: "Play the game :)", nextQuestion: 1}, 
-            rightbutton: { answer: "I really don not have the time, but okay a quickie then", nextQuestion: 1}
+            leftbutton: { answer: "Play the game", nextQuestion: 12}, 
+            rightbutton: { answer: "Don't have the time, but okay there is always time for a quickie ;)", nextQuestion: 12}
         }
-    }, 
+    }, {
+        id: 12,
+        img: {url: "./src/assets/santa-left.png", class: "santa1"},
+        question: 'Please enter your name?',
+        hint: 'Hint: If your name is more than 12 characters, get a nickname..... I mean in general, the game works anyway, but you just have a really bad nickname... Thats all I am saying!',
+        answerInput: {answer: 'Write your answer here', key: ''},
+        choises: {             
+            rightbutton: { answer: "Confirm", nextQuestion: 1}
+        }
+    },
     {
         id: 1,
         img: {url: "./src/assets/santa-left.png", class: "santa1"},
@@ -33,16 +43,16 @@ export let progress: Progress[] = [
         img: {url: "./src/assets/santa-left.png", class: "santa"},
         question: 'Santa reaches the second step of the ladder and is exhausted, what should he do now?',
         choises: {
-            leftbutton: { answer: "Drink a Nocco and keep climbing, you can almost taste the sweetness", nextQuestion: 9}, 
+            leftbutton: { answer: "Drink a Nocco and fly up to the next step", nextQuestion: 9}, 
             rightbutton: { answer: "Rest for a bit, then give it your all to clear the next step", nextQuestion: 3}
         }
     },
     {
         id: 9,
-        img: {url: "./src/assets/santa-left.png", class: "santa"},
+        img: {url: "./src/assets/santa-left.png", class: "santa2"},
         question: 'That Nocco sure did the thing, filled with caffiene and vitamins an shit. Give him another one?',
         choises: {
-            leftbutton: { answer: "Yes, but hold on to it until he reaches the chocolatebar", nextQuestion: 3}, 
+            leftbutton: { answer: "I dont want to give him a heartattack... On with the climbing", nextQuestion: 3}, 
             rightbutton: { answer: "No, one more and even Rudolf will be jealous", nextQuestion: 3}
         }
     },
@@ -50,32 +60,36 @@ export let progress: Progress[] = [
         id: 3,
         img: {url: "./src/assets/santa-left.png", class: "santa2"},
         question: 'If Santa eats this chocolatebar he will eat over 1000 kcal, is it worth it?',
+        hint: 'Hint: Hurt Santas feeling and he will set all your loops to be infinite',
         choises: {
             leftbutton: { answer: 'Yes, come on he is already as fat as he can be', nextQuestion: 4}, 
-            rightbutton: { answer: 'Say no and you will hurt Santas feelings', nextQuestion: 0}
+            rightbutton: { answer: 'Say no and you will hurt Santas feelings', nextQuestion: 1}
         }
     },
     {
         id: 4,
         img: {url: "./src/assets/santa-left.png", class: "santa3"},
-        question: 'Santa slips on the top step, what do you say to help him!',
+        question: 'Santa slips on the step, what do you say to help him!',
+        hint: 'Hint: If you are to loud Mrs. Santa will hear you',
         choises: {
             leftbutton: { answer: 'Call for help', nextQuestion: 7}, 
-            rightbutton: { answer: 'Clumsy bastard, solve it yourself', nextQuestion: 10}
+            rightbutton: { answer: 'Come on you Heffalump! Almost there!', nextQuestion: 10}
         }
     },
     {
         id: 10,
         img: {url: "./src/assets/santa-left.png", class: "santa3"},
-        question: 'From the beginning this was supposed to be a mathgame. Solve this within 10 seconds to advance! What is 28 476 / 678!',
+        question: 'Okay a mathquestion then...... Solve this tricky one to advance! What is 28 476 / 678!',
+        hint: 'Hint: "The Answer to the Ultimate Question of Life, the Universe, and Everything"',
+        answerInput: {answer: 'Write your answer here', key: '42'}, 
         choises: {
-            leftbutton: { answer: 'Wait a minute, I ve got this... eeehh green!', nextQuestion: 5}, 
-            rightbutton: { answer: '42, the answer to everything!', nextQuestion: 5}
+            //leftbutton: { answer: 'Wait a minute, I ve got this... eeehh green!', nextQuestion: 5}, 
+            rightbutton: { answer: 'Confirm', nextQuestion: 13}
         }
     },
     {
         id: 5,
-        img: {url: "./src/assets/santa-left.png", class: "santa4"},
+        img: {url: "./src/assets/santa-left.png", class: "santa5"},
         question: 'Close enough! Santa can now reach the chocolatebar, should he grab it?',
         choises: {
             leftbutton: { answer: 'No, I have changed my mind', nextQuestion: 3}, 
@@ -83,9 +97,19 @@ export let progress: Progress[] = [
         }
     },
     {
+        id: 13,
+        img: {url: "./src/assets/santa-left.png", class: "santa4"},
+        question: 'Thats right! Then what will this print out...',
+        hint: '<h1>Hello World</h1>',
+        choises: {
+            leftbutton: { answer: 'Oh oh wait a minute I got this... eeehhh green!', nextQuestion: 5}, 
+            rightbutton: { answer: 'What do I look like, a programmer or something.....', nextQuestion: 5}
+        }
+    },
+    {
         id: 6,
         img: {url: "./src/assets/santa-left.png", class: "santa5"},
-        img2: {url: "./src/assets/471-4717969_mrs-claus-santa-claus.png", class: "mrssantaHidden"},
+        img2: {url: "./src/assets/471-4717969_mrs-claus-santa-claus.png", class: "mrssanta"},
         question: 'Mrs. Santa enters the room, sees Santa on the stairs and takes out her shotgun.... Do you want to restart the game?',
         choises: {
             leftbutton: { answer: 'No, to hell with that bitch', nextQuestion: 7}, 
@@ -95,7 +119,7 @@ export let progress: Progress[] = [
     {
         id: 7,
         img: {url: "./src/assets/santa-left.png", class: "santa6"},
-        img2: {url: "./src/assets/471-4717969_mrs-claus-santa-claus.png", class: "mrssantaHidden"},
+        img2: {url: "./src/assets/471-4717969_mrs-claus-santa-claus.png", class: "mrssanta"},
         img3: {url: "./src/assets/Fortnite-Pump-Transparent.png", class: "shotgun"},
         soundeffect: {url: "./src/assets/Beefy-12-Gauge-Pump-Action-Shotgun-Close-Gunshot-A-www.fesliyanstudios.com-www.fesliyanstudios.com.mp3"},
         question: 'Are you happy with yourself! You bastard, think about the children and restart the game?',
