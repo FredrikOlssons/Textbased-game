@@ -6,6 +6,10 @@ export interface Progress {
     img3?: ImageData
     soundeffect?: Soundeffect
     hint?: string
+    lastQuestion?: boolean
+    playSound?: boolean
+    firstQuestion?: boolean
+
     
     answerInput?: InputData
     choises: {

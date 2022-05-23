@@ -11,8 +11,9 @@ let hint = document.getElementById("hintText") as HTMLElement
 let img = document.querySelector<HTMLImageElement>(".santaHidden")!
 let img2 = document.querySelector<HTMLImageElement>(".mrssantaHidden")!
 let img3 = document.querySelector<HTMLImageElement>(".shotgun")!
+let img4 = document.querySelector<HTMLImageElement>(".stair")!
 
-let inputField = document.querySelector<HTMLDivElement>(".input")      
+let inputField = document.querySelector<HTMLInputElement>(".input")!    
 let backgroundSound = new Audio("./src/assets/jingle-bells-james-lord-pierpont-christmas-piano-music-12341.mp3")
 
 /* let soundIcon = document.querySelector<HTMLImageElement>(".soundOff")!
@@ -20,6 +21,15 @@ let backgroundSound = new Audio("./src/assets/jingle-bells-james-lord-pierpont-c
 function muteSound() {
   
 } */
+
+
+let input = inputField.value;
+console.log(input)
+function getInputFromTextBox() {
+  alert("Welcome " + input);
+}
+
+//inputField!.value = ""
 
 function playSound() {
   backgroundSound.play();
@@ -66,7 +76,7 @@ function gameprogress(this: HTMLElement, event: MouseEvent): void {
     let imgMrsSanta = img2
     let shotgun = img3
     let soundeffect = new Audio("./src/assets/Beefy-12-Gauge-Pump-Action-Shotgun-Close-Gunshot-A-www.fesliyanstudios.com-www.fesliyanstudios.com.mp3")
-    
+    let ladder = img4
     
     if(currentGamestep.choises.leftbutton) {
       leftbutton!.innerText = currentGamestep.choises.leftbutton!.answer
@@ -90,28 +100,36 @@ function gameprogress(this: HTMLElement, event: MouseEvent): void {
     if (currentGamestep.question) {
       text!.innerText = currentGamestep.question      
     }
+
+    
     
     if(currentGamestep.answerInput){      
       
       if (inputField) {
         inputField.innerText = currentGamestep.answerInput.answer
-        inputField.classList.add('showInput')       
+        inputField.classList.add('showInput')   
+        if (input == currentGamestep.answerInput.key) {
+          alert('Good Job')
+        }    
       } 
             
     } else if (!currentGamestep.answerInput && inputField) {
       inputField.classList.remove('showInput')
       leftbutton.classList.remove('input')
     }
-    
-    if(currentGamestep.id == 0) {
-      stopSound()
+
+    if(currentGamestep.id == 1) {
+      getInputFromTextBox()
     }
 
+    if(currentGamestep.playSound) {
+      playSound()
+    }
+    
     if ( picture && currentGamestep.img ) {
       picture.classList.add(currentGamestep.img.class)
       picture.append(currentGamestep.img.url)
-      if (currentGamestep.id == 12) {
-        playSound()
+      if (currentGamestep.soundeffect) {
       }
     }
     
@@ -137,10 +155,11 @@ function gameprogress(this: HTMLElement, event: MouseEvent): void {
       //buttonGrid.append(confirmBtn)
     }
     
-    if (currentGamestep.id == 11) {
+    if(currentGamestep.lastQuestion) {
+      stopSound()
       location.reload()
     }
-   
+    
   }
 
 

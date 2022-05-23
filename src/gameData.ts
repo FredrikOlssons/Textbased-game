@@ -13,8 +13,9 @@ export let progress: Progress[] = [
     }, {
         id: 12,
         img: {url: "./src/assets/santa-left.png", class: "santa1"},
-        question: 'Please enter your name?',
-        hint: 'Hint: If your name is more than 12 characters, get a nickname..... I mean in general, the game works anyway, but you just have a really bad nickname... Thats all I am saying!',
+        question: 'Please enter your name. \n\nIf your name is more than 12 characters, get yourself a nickname...',
+        hint: '\nI mean in general! The game works anyway, but you just have a really long name... \nThats all I am saying!',
+        playSound: true,
         answerInput: {answer: 'Write your answer here', key: ''},
         choises: {             
             rightbutton: { answer: "Confirm", nextQuestion: 1}
@@ -24,6 +25,7 @@ export let progress: Progress[] = [
         id: 1,
         img: {url: "./src/assets/santa-left.png", class: "santa1"},
         question: 'Santa is in the mood for some sweets, do you want him to try and steal Mrs. Santas hidden chocolatebar?',
+        firstQuestion: true,
         choises: {
             leftbutton: { answer: "No, she will kill him", nextQuestion: 8}, 
             rightbutton: { answer: "Hell yeah, it is just laying there anyway", nextQuestion: 2}
@@ -60,10 +62,10 @@ export let progress: Progress[] = [
         id: 3,
         img: {url: "./src/assets/santa-left.png", class: "santa2"},
         question: 'If Santa eats this chocolatebar he will eat over 1000 kcal, is it worth it?',
-        hint: 'Hint: Hurt Santas feeling and he will set all your loops to be infinite',
+        hint: 'Hint: Santa is very sensitive about his weight',
         choises: {
             leftbutton: { answer: 'Yes, come on he is already as fat as he can be', nextQuestion: 4}, 
-            rightbutton: { answer: 'Say no and you will hurt Santas feelings', nextQuestion: 1}
+            rightbutton: { answer: 'Say no, hurt his feelings and never get presents again', nextQuestion: 1}
         }
     },
     {
@@ -79,8 +81,8 @@ export let progress: Progress[] = [
     {
         id: 10,
         img: {url: "./src/assets/santa-left.png", class: "santa3"},
-        question: 'Okay a mathquestion then...... Solve this tricky one to advance! What is 28 476 / 678!',
-        hint: 'Hint: "The Answer to the Ultimate Question of Life, the Universe, and Everything"',
+        question: 'Okay a mathquestion then...... Solve this tricky one to advance! \n\nWhat is 28 476 / 678!',
+        hint: '\nHint: "The Answer to the Ultimate Question of Life, the Universe, and Everything"',
         answerInput: {answer: 'Write your answer here', key: '42'}, 
         choises: {
             //leftbutton: { answer: 'Wait a minute, I ve got this... eeehh green!', nextQuestion: 5}, 
@@ -132,6 +134,7 @@ export let progress: Progress[] = [
         id: 11,
         img: {url: "./src/assets/santa-left.png", class: "santa6"},
         question: 'You suck at this',
+        lastQuestion: true,
         choises: {
             leftbutton: { answer: '', nextQuestion: 0}, 
             rightbutton: { answer: '', nextQuestion: 0}

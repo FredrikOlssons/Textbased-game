@@ -88,6 +88,7 @@ body {
   background-color: rgb(185, 137, 231);
   color: black;
   border: 2px solid black;
+  cursor: pointer;
 }
 
 #rightbutton:hover {
