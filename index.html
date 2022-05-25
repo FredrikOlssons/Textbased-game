@@ -10,7 +10,6 @@
     <title>Santas quest</title>
   </head>
   <body>
-    <!-- <img class="soundOff" src="./src/assets/sound-off-music-mute-off-sound-speaker-volume-icon-16.png" alt=""> -->
     <div class="backgroundDiv">
       <img
         class="background"
@@ -21,7 +20,13 @@
         <div id="text"></div>
         <div id="hintText"></div>
         <div id="answer_buttons" class="btn-grid">
-          <input class="input" value="" type="text" placeholder="Write your answer here" />
+          <input
+            class="input"
+            id="input"
+            value=""
+            type="text"
+            placeholder="Write your answer here"
+          />
           <button class="btn" id="leftbutton"></button>
           <button class="btn" id="rightbutton"></button>
         </div>
@@ -29,7 +34,7 @@
 
       <div class="ladder">
         <img
-          class="stair"
+          class="stairHidden"
           src="/src/assets/580b585b2edbce24c47b2bbe.png.crdownload"
           alt=""
         />

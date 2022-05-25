@@ -121,7 +121,15 @@ body {
   
 }
 
+.stairHidden {
+  visibility: hidden;
+  object-fit: scale-down;
+  max-height: 90%;
+  height: 90%;
+}
+
 .stair {
+  visibility: visible;
   object-fit: scale-down;
   max-height: 90%;
   height: 90%;
@@ -230,3 +238,14 @@ top: 20%;
     /* transform: rotate(-20deg) scale(1.5) rotateY(180deg); */
     transform: rotate(90deg) scale(1.5);
 }
+
+.santa7 {
+  visibility: visible;
+  position: absolute;
+  height: 215px;
+  max-height: 50%;
+  top: 49%;
+  left: 15%;
+  z-index: 1;
+}
+  
