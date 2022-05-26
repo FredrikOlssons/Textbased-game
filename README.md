@@ -1,9 +1,10 @@
 # Textbased-game
 
 Twisted Stories, Uppgift kurs Systemutveckling Ramverk 
+Link to GitHub-repo - https://github.com/FredrikOlssons/Textbased-game
 
 Game description
-Santa has a sweet-tooth. Help him snatch some candy from his wife and give him his temporarily fix.
+Santa has a sweet-tooth. Help him snatch some candy from his wife and give him his temporarily fix. Game has to be run after a npm install on the unit and opened with the help of npm run dev. 
 
 Uppgift:
 Du bygga ett textbaserat storyspel där spelaren färdas på stigar i din story. För varje punkt i din story skall en text och/eller bild presenteras för spelaren och denne ska få ett, två eller tre val. Valen tar spelaren vidare (eller tillbaka) på en väg i storyn.Börja med att bestämma vad spelet skall handla om och planera sedan gärna ett grovt upplägg av spelet innan du börjar programmera. Alla spel skall ha ett namn och en början, när spelet tar slut skall man få valet att börja om. Inlämning För att bli godkänd på den här uppgiften MÅSTE ni använda GIT och GitHub. Inlämningen sker som vanligt via läroplattformen. Den ska innehålla en titel, beskrivning av projektet, info om hur projektet byggs och körs, samt en länk till GitHub repot.
