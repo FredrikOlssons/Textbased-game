@@ -6,12 +6,12 @@ export let progress: Progress[] = [
     {
         id: 0,
         img: {url: "./src/assets/santa-left.png", class: "hiddenSanta"},
-        question: 'Hello! And welcome to the game!',
+        question: 'Hello you! Play and perform this game and affect every child in the world, become the hero or break everyones heart! ',
         hint: 'Hint: If you just restarted the game because you are an idiot..... DO BETTER THIS TIME!',
         emptybox: true,
         choises: {
             leftbutton: { answer: "Yes please! Play the game", nextQuestion: 12}, 
-            rightbutton: { answer: "No I dont wanna, but okay quickie then ;)", nextQuestion: 12}
+            rightbutton: { answer: "No I can't take the pressure, but okay for the children then", nextQuestion: 12}
         }
     }, {
         id: 12,
@@ -34,7 +34,7 @@ export let progress: Progress[] = [
         firstQuestion: true,
         choises: {
             leftbutton: { answer: "Nooooo, she will kill him", nextQuestion: 8}, 
-            rightbutton: { answer: "Hell yeah, it is just laying there anyway", nextQuestion: 2}
+            rightbutton: { answer: "Hell yeah, it is gonna go bad just laying there anyway", nextQuestion: 2}
         }
     }, 
     {
@@ -52,22 +52,23 @@ export let progress: Progress[] = [
         id: 2,
         img: {url: "./src/assets/santa-left.png", class: "santa"},
         img4: {url: "./src/assets/580b585b2edbce24c47b2bbe.png.crdownload", class: "stair"},
-        question: 'Santa reaches the first step of the ladder and is exhausted, what should he do now?',
+        question: 'Santa is exhausted when he reaches the first step of the ladder, what should he do now?',
         emptybox: true,
         choises: {
-            leftbutton: { answer: "Drink a Red Bull and fly up to the next step", nextQuestion: 9}, 
-            rightbutton: { answer: "Rest for a bit, then give it your all to clear the next step", nextQuestion: 3}
+            leftbutton: { answer: "Have him drink a Red Bull and fly up to the next step", nextQuestion: 9}, 
+            rightbutton: { answer: "Have him find the will by imagine the taste of that sweet candy", nextQuestion: 3}
         }
     },
     {
         id: 9,
         img: {url: "./src/assets/santa-left.png", class: "santa2"},
         img4: {url: "./src/assets/580b585b2edbce24c47b2bbe.png.crdownload", class: "stair"},
-        question: 'That Red Bull sure did the thing, filled with caffiene and vitamins an shit. Give him another one?',
+        question: "That Red Bull sure did the thing, filled with caffiene and vitamins an shit.", 
+        hint: "\nDisclaimer: The developer of this game is not getting paid by Red Bull... yet)",
         emptybox: true,
         choises: {
-            leftbutton: { answer: "That will give the old man a heartattack... On with the climbing", nextQuestion: 3}, 
-            rightbutton: { answer: "No, one more and even Rudolf will be jealous", nextQuestion: 3}
+            leftbutton: { answer: "That's really to bad, he is really worth it. Well then, climb on!", nextQuestion: 3}, 
+            rightbutton: { answer: "One more of those and even Rudolf will be jealous. On with the climbing", nextQuestion: 3}
         }
     },
     {
@@ -98,7 +99,7 @@ export let progress: Progress[] = [
         id: 10,
         img: {url: "./src/assets/santa-left.png", class: "santa3"},
         img4: {url: "./src/assets/580b585b2edbce24c47b2bbe.png.crdownload", class: "stair"},
-        question: 'Okay a mathquestion then...... Solve this tricky one to advance! \n\nWhat is 28 476 / 678!',
+        question: 'Haha did you really think that only some sweet-talk will get you to the line...... Solve this tricky one to advance! \n\nWhat is 28 476 / 678!',
         hint: '\nHint: "The Answer to the Ultimate Question of Life, the Universe, and Everything"',
         
         answerInput: {answer: 'Write your answer here'}, 
@@ -125,7 +126,7 @@ export let progress: Progress[] = [
         hint: '<h1>Hello World</h1>',
         answerInput: {answer: 'Write your answer here', key: 42}, 
         numberInput: true,
-        printAnswer: {correctAnswer: 'Thats right! Here is your towel', wrongAnswer: 'No no no! You really need to go hitchhike'},
+        printAnswer: {correctAnswer: 'Thats right! Here is your towel', wrongAnswer: 'No no no! You really need to get your hitchhikers references straight'},
         choises: {
             leftbutton: { answer: 'Oh oh wait a minute I got this... eeehhh green!', nextQuestion: 5}, 
             rightbutton: { answer: 'What do I look like, a programmer or something.....', nextQuestion: 5}
@@ -164,7 +165,7 @@ export let progress: Progress[] = [
         question: 'Santa gets real regretfull for trying to steal the candy so he appologizes to his wife, gets a hug and then they hop into the bedroom',
         emptybox: true,
         choises: {
-            leftbutton: { answer: 'Eeeww! I dont like this ending, take me back for a different ending', nextQuestion: 11}, 
+            leftbutton: { answer: 'Eeeww! I dont like this ending, take me back to the start for a different ending', nextQuestion: 11}, 
             rightbutton: { answer: 'I am a sucker for "happy endings", please restart the game', nextQuestion: 11}
         }
     },
