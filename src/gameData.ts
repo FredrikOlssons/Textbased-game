@@ -122,7 +122,7 @@ export let progress: Progress[] = [
         id: 13,
         img: {url: "./src/assets/santa-left.png", class: "santa4"},
         img4: {url: "./src/assets/580b585b2edbce24c47b2bbe.png.crdownload", class: "stair"},
-        question: 'Then what will this print out...',        
+        question: 'Okay smartass what will this print out...',        
         hint: '<h1>Hello World</h1>',
         answerInput: {answer: 'Write your answer here', key: 42}, 
         numberInput: true,
@@ -162,7 +162,7 @@ export let progress: Progress[] = [
         id: 14,
         img: {url: "./src/assets/santa-left.png", class: "santa7"},
         img2: {url: "./src/assets/471-4717969_mrs-claus-santa-claus.png", class: "mrssanta"},        
-        question: 'Santa gets real regretfull for trying to steal the candy so he appologizes to his wife, gets a hug and then they hop into the bedroom',
+        question: 'Sneaky as he is, Santa acts real regretfull for trying to steal the candy so he appologizes to his wife, hugs her and takes her in the bedroom for some love',
         emptybox: true,
         choises: {
             leftbutton: { answer: 'Eeeww! I dont like this ending, take me back to the start for a different ending', nextQuestion: 11}, 
